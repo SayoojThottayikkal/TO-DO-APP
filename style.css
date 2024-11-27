@@ -1,57 +1,65 @@
-li {
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+li ul {
   list-style: none;
 }
-#todolist {
-  display: inline-block;
-}
-#todolist section.wrapper {
-  background: #da8a08;
-  height: 600px;
-  width: 400px;
-  padding: 40px;
-  text-align: center;
-  border-radius: 30px;
-}
-#todolist div.task {
-  padding: 20px;
-}
-#todolist div.task h2 {
-  font-size: 40px;
-  font-weight: 800;
-}
-#todolist div.task h2 img {
-  width: 30px;
-  height: 30px;
-  margin-left: 20px;
-}
-#todolist div.task input.input_data {
-  padding: 10px;
-  width: 90%;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: #938e86;
-  cursor: pointer;
+section {
+  background: #443b3b;
+  height: 500px;
 }
 
-#todolist div.task button {
-  border-radius: 6px;
-  padding: 8px 10px;
-  cursor: pointer;
+section div {
+  background: #dff60f;
 }
-#todolist div.task button.add_task {
+
+section div .top {
+  padding: 30px;
+  text-align: center;
 }
-#todolist ul {
+
+section div .top h1 {
+  font-size: 40px;
 }
-#todolist ul li {
+
+section div .top h1 img {
+  height: 30px;
+  width: 30px;
 }
-ul li:hover {
-  background: #f3eaea;
-  cursor: pointer;
+section div .top #input_data {
+  padding: 8px;
+  border-radius: 4px;
 }
-.toDo {
-  display: flex;
+section div .top #task {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgb(232, 13, 13);
+  color: #fff;
+  border: #dff60f;
+}
+
+section div .list {
+}
+
+section div .list #list_ul {
+}
+
+section div .list #list_ul li {
   color: #000;
-  margin: 50px;
-  font-size: 2rem;
-  justify-content: left;
+  font-size: 20px;
+  background: #eee8e8;
+  padding: 10px;
+  display: block;
+}
+
+section div .list #list_ul li .delete-button {
+}
+section div .list .list_ul li img {
+  width: 20px;
+  height: 20px;
+}
+.strike {
+  text-decoration: line-through;
 }

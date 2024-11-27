@@ -1,36 +1,46 @@
-// selecting html
-let toDoApp = document.querySelector(".input_data");
-let toDoButton = document.querySelector(".add_button");
-let toDoList = document.querySelector(".allul");
+// task 1
 
-toDoButton.addEventListener("click", addtodo);
-toDoList.addEventListener("click", del);
+const data = document.getElementById("input_data").value;
+const btn = document.getElementById("task");
+const group = document.getElementById("list_ul");
 
-// function
-function addtodo(e) {
-  const toDoDiv = document.createElement("div");
-  toDoDiv.classList.add("toDo");
-  e.preventDefault();
-  const toLI = document.createElement("li");
-  toLI.classList.add("toDoItems");
+let task = [];
+// btn.addEventListener("click", () => {
+//   const data = document.getElementById("input_data").value;
+//   const list = document.createElement("li");
+//   list.className = "list_li";
+//   list.innerHTML = data;
+//   group.appendChild(list);
+// });
 
-  toLI.innerText = toDoApp.value;
-
-  toDoDiv.appendChild(toLI);
-  //   delete button
-  const dltbtn = document.createElement("button");
-  dltbtn.classList.add("delete");
-  dltbtn.innerText = "Delete";
-  toDoDiv.appendChild(dltbtn);
-
-  toDoList.appendChild(toDoDiv);
-  //   clear data
-  toDoApp.value = "";
+function addtask() {
+  const data = document.getElementById("input_data").value;
+  task.push(data);
+  group.innerHTML = task
+    .map((item) => {
+      return `
+    <li>
+    <input type="checkbox" class="check"/>
+    <span class="todo-text">${item}</span>
+    </li>`;
+    })
+    .join("");
+  console.log(task, "taskpush");
 }
-function del(e) {
-  const item = e.target;
-  if (item.classList[0] === "delete") {
-    const todo = item.parentElement;
-    todo.remove();
-  }
-}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const checkboxs = document.querySelectorAll(".check");
+  console.log(checkboxs, "checkboxs");
+  checkboxs.forEach((item) => {
+    item.addEventListener("change", (event) => {
+      const todoText = event.target.nextElementSibling;
+      console.log(todoText);
+
+      if (event.target.checked) {
+        todoText.classList.add("strike");
+      } else {
+        todoText.classList.remove("strike");
+      }
+    });
+  });
+});

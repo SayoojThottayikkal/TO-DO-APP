@@ -10,16 +10,20 @@
     <title>TO DO APP</title>
   </head>
   <body>
-    <section id="todolist">
-      <section class="wrapper">
-        <div class="task">
-          <h2>TO DO LIST <img src="images/notes.png" alt="" /></h2>
-          <input type="text" class="input_data" placeholder="Title.." />
-          <button class="add_button">ADD TASK</button>
-        </div>
+  <section>
+    <div>
+    <div class="top">
+      <h1>TO DO LIST <img src="images/notes.png" alt=""></h1>
+      <input type="text"   id="input_data" placeholder="task.." >
+      <button id="task" onclick="addtask()">ADD TASK</button>
+    </div>
+    <div class="list">
+      <ul id="list_ul">
 
-        <ul class="allul"></ul>
-      </section>
+      </ul>
+    </div>
+  </div>
+  </section>
     </section>
     <script src="script.js"></script>
   </body>
