@@ -15,10 +15,10 @@
     <div class="top">
       <h1>TO DO LIST <img src="images/notes.png" alt=""></h1>
       <input type="text"   id="input_data" placeholder="task.." >
-      <button id="task" onclick="addtask()">ADD TASK</button>
+      <button id="task" onclick="addtask()" >ADD TASK</button>  <button id="task" onclick="clr()">Clear All</button>
     </div>
     <div class="list">
-      <ul id="list_ul">
+      <ul id="list_ul" onclick="remove()">
 
       </ul>
     </div>

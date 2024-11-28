@@ -19,23 +19,23 @@ function addtask() {
   group.innerHTML = task
     .map((item) => {
       return `
-    <li>
-    <input type="checkbox" class="check"/>
+    <li id="list_li">
+    <input type="checkbox" class="check-box" >
     <span class="todo-text">${item}</span>
+    <button class ="del" onclick="dlt()">Delete</button>
     </li>`;
     })
     .join("");
-  console.log(task, "taskpush");
+  // console.log(task, "taskpush");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const checkboxs = document.querySelectorAll(".check");
-  console.log(checkboxs, "checkboxs");
-  checkboxs.forEach((item) => {
+function remove() {
+  const checkboxes = document.querySelectorAll(".check-box");
+  // console.log(checkboxes, "checkboxes");
+  checkboxes.forEach((item) => {
     item.addEventListener("change", (event) => {
       const todoText = event.target.nextElementSibling;
-      console.log(todoText);
-
+      // console.log(todoText);
       if (event.target.checked) {
         todoText.classList.add("strike");
       } else {
@@ -43,4 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
+}
+
+function dlt() {
+  var deld = document.querySelectorAll(".del");
+  deld.forEach((Task) => {
+    Task.onclick = () => {
+      Task.parentElement.remove();
+    };
+  });
+}
+
+function clr() {}
