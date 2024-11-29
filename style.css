@@ -39,6 +39,13 @@ section div .top #task {
   color: #fff;
   border: #dff60f;
 }
+section div.top #clr {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgb(232, 13, 13);
+  color: #fff;
+  border: #dff60f;
+}
 
 section div .list {
 }
@@ -75,5 +82,8 @@ li.to {
   background-color: #dff60f;
 }
 #list_li {
+  display: none;
+}
+.delete {
   display: none;
 }

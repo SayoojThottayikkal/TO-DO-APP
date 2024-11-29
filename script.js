@@ -54,4 +54,14 @@ function dlt() {
   });
 }
 
-function clr() {}
+function clr() {
+  const group = document.getElementById("list_ul");
+  task.splice(0);
+  group.innerHTML = task
+    .map((item) => {
+      return `
+    <li class="delete">${item}</li>`;
+    })
+    .join("");
+  console.log(clr);
+}
